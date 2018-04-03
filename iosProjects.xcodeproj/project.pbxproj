@@ -14,6 +14,9 @@
 		61F4E991207326A8001B9C27 /* iosProjectsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F4E990207326A8001B9C27 /* iosProjectsTests.m */; };
 		61F4E99C207326A8001B9C27 /* iosProjectsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F4E99B207326A8001B9C27 /* iosProjectsUITests.m */; };
 		61F4E9AC2073271C001B9C27 /* CYMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F4E9AB2073271C001B9C27 /* CYMainController.m */; };
+		61F4E9B02073560C001B9C27 /* CYUIController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F4E9AF2073560C001B9C27 /* CYUIController.m */; };
+		61F4E9B420735907001B9C27 /* CYBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F4E9B320735907001B9C27 /* CYBaseController.m */; };
+		61F4E9B820736F86001B9C27 /* CYTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F4E9B720736F86001B9C27 /* CYTableController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,13 @@
 		61F4E99D207326A8001B9C27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61F4E9AA2073271C001B9C27 /* CYMainController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CYMainController.h; sourceTree = "<group>"; };
 		61F4E9AB2073271C001B9C27 /* CYMainController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CYMainController.m; sourceTree = "<group>"; };
+		61F4E9AE2073560C001B9C27 /* CYUIController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CYUIController.h; sourceTree = "<group>"; };
+		61F4E9AF2073560C001B9C27 /* CYUIController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CYUIController.m; sourceTree = "<group>"; };
+		61F4E9B1207356A0001B9C27 /* enum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = enum.h; sourceTree = "<group>"; };
+		61F4E9B220735907001B9C27 /* CYBaseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CYBaseController.h; sourceTree = "<group>"; };
+		61F4E9B320735907001B9C27 /* CYBaseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CYBaseController.m; sourceTree = "<group>"; };
+		61F4E9B620736F86001B9C27 /* CYTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CYTableController.h; sourceTree = "<group>"; };
+		61F4E9B720736F86001B9C27 /* CYTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CYTableController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +111,7 @@
 			children = (
 				61F4E977207326A5001B9C27 /* AppDelegate.h */,
 				61F4E978207326A5001B9C27 /* AppDelegate.m */,
+				61F4E9B1207356A0001B9C27 /* enum.h */,
 				61F4E9A9207326C4001B9C27 /* ViewController */,
 				61F4E980207326A8001B9C27 /* Assets.xcassets */,
 				61F4E982207326A8001B9C27 /* LaunchScreen.storyboard */,
@@ -131,10 +142,32 @@
 		61F4E9A9207326C4001B9C27 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				61F4E9B520736F12001B9C27 /* UITableView */,
+				61F4E9AD207355E4001B9C27 /* UIController */,
 				61F4E9AA2073271C001B9C27 /* CYMainController.h */,
 				61F4E9AB2073271C001B9C27 /* CYMainController.m */,
+				61F4E9B220735907001B9C27 /* CYBaseController.h */,
+				61F4E9B320735907001B9C27 /* CYBaseController.m */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		61F4E9AD207355E4001B9C27 /* UIController */ = {
+			isa = PBXGroup;
+			children = (
+				61F4E9AE2073560C001B9C27 /* CYUIController.h */,
+				61F4E9AF2073560C001B9C27 /* CYUIController.m */,
+			);
+			path = UIController;
+			sourceTree = "<group>";
+		};
+		61F4E9B520736F12001B9C27 /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				61F4E9B620736F86001B9C27 /* CYTableController.h */,
+				61F4E9B720736F86001B9C27 /* CYTableController.m */,
+			);
+			path = UITableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,9 +299,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61F4E9B820736F86001B9C27 /* CYTableController.m in Sources */,
 				61F4E9AC2073271C001B9C27 /* CYMainController.m in Sources */,
+				61F4E9B420735907001B9C27 /* CYBaseController.m in Sources */,
 				61F4E987207326A8001B9C27 /* main.m in Sources */,
 				61F4E979207326A5001B9C27 /* AppDelegate.m in Sources */,
+				61F4E9B02073560C001B9C27 /* CYUIController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,71 +1,80 @@
 //
-//  CYMainController.m
+//  CYTableController.m
 //  iosProjects
 //
 //  Created by QLMAC on 2018/4/3.
 //  Copyright © 2018年 ChaoYuW. All rights reserved.
 //
 
-#import "CYMainController.h"
-
-#import "CYUIController.h"
 #import "CYTableController.h"
 
-@interface CYMainController ()<UITableViewDelegate,UITableViewDataSource>
+@interface CYTableController ()<UITableViewDelegate,UITableViewDataSource>
 {
-    ControllerType _controllerType ;
+    NSArray *_datas;
+    
+    NSIndexPath *_inp;
 }
-@property (nonatomic, strong) NSMutableArray *dataMuArray ;
 @end
 
-@implementation CYMainController
-
+@implementation CYTableController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"UITableview 刷新方法" ;
     
-    self.title = @"测试用例" ;
+    UITableView *tbv = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    tbv.dataSource =self;
+    tbv.delegate =self;
+    [self.view addSubview:tbv];
     
-    _dataMuArray = [NSMutableArray arrayWithCapacity:0] ;
     
-    [_dataMuArray addObject:@"UI部分"] ;
-    [_dataMuArray addObject:@"UITableview 刷新方法"] ;
-    
-    UITableView *myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)) style:UITableViewStylePlain] ;
-    myTableView.delegate = self ;
-    myTableView.dataSource = self ;
-    [self.view addSubview:myTableView] ;
+    _datas = [[NSArray alloc]initWithObjects:@"1",@"1",@"1",@"1",@"1",@"1",@"1",@"1",nil];
     
     
 }
-
 #pragma mark -- UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 44.0f ;
+    if(_inp) {
+        
+        if (_inp.section == indexPath.section && _inp.row == indexPath.row) {
+
+            _inp = nil;
+            return 60 *2.0;
+            
+            
+            
+        }
+        
+    }
+    
+    return 60;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    switch (indexPath.row) {
-        case 0:
-            [self gotoCYUIController] ;
-            break;
-            case 1:
-        {
-            [self gotoCYTableController] ;
-            break ;
-        }
-            
-        default:
-            break;
-    }
+    [tableView deselectRowAtIndexPath:indexPath animated:TRUE];
+    
+    
+    
+    //获取当前indexPath并判断对应的Cell是否被选中
+    
+    
+    _inp = indexPath;
+    
+    
+    
+    //最神奇的地方！！
+    
+    [tableView beginUpdates];
+    
+    [tableView endUpdates];
 }
 
 #pragma mark -- UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_dataMuArray count] ;
+    return [_datas count] ;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -75,24 +84,11 @@
         myCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:idCell] ;
         myCell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
     }
-    NSString *titleString = _dataMuArray[indexPath.row] ;
-    myCell.detailTextLabel.text = titleString ;
+    NSString *titleString = _datas[indexPath.row] ;
+    myCell.textLabel.text = titleString ;
     return myCell ;
 }
 
-#pragma mark --
-- (void)gotoCYUIController
-{
-    CYUIController * uiVC = [[CYUIController alloc] init] ;
-    [self.navigationController pushViewController:uiVC animated:NO] ;
-    
-}
-- (void)gotoCYTableController
-{
-    CYTableController * uiVC = [[CYTableController alloc] init] ;
-    [self.navigationController pushViewController:uiVC animated:NO] ;
-    
-}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

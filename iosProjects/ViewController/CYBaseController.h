@@ -1,5 +1,5 @@
 //
-//  CYMainController.h
+//  CYBaseController.h
 //  iosProjects
 //
 //  Created by QLMAC on 2018/4/3.
@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "enum.h"
 
-@interface CYMainController : UIViewController
+@interface CYBaseController : UIViewController
+
+
 
 @end
