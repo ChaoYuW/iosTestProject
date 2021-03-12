@@ -10,12 +10,14 @@
 
 #import "CYUIController.h"
 #import "CYTableController.h"
+#import "CYProgressTableController.h"
+
 
 @interface CYMainController ()<UITableViewDelegate,UITableViewDataSource>
 {
-    ControllerType _controllerType ;
+    ControllerType _controllerType;
 }
-@property (nonatomic, strong) NSMutableArray *dataMuArray ;
+@property (nonatomic, strong) NSMutableArray *dataMuArray;
 @end
 
 @implementation CYMainController
@@ -25,17 +27,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.title = @"测试用例" ;
+    self.title = @"测试用例";
     
-    _dataMuArray = [NSMutableArray arrayWithCapacity:0] ;
+    _dataMuArray = [NSMutableArray arrayWithCapacity:0];
     
-    [_dataMuArray addObject:@"UI部分"] ;
-    [_dataMuArray addObject:@"UITableview 刷新方法"] ;
+    [_dataMuArray addObject:@"UI部分"];
+    [_dataMuArray addObject:@"UITableview 刷新方法"];
+    [_dataMuArray addObject:@"MBProgressHUD+ECAdd"];
     
-    UITableView *myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)) style:UITableViewStylePlain] ;
-    myTableView.delegate = self ;
-    myTableView.dataSource = self ;
-    [self.view addSubview:myTableView] ;
+    UITableView *myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)) style:UITableViewStylePlain];
+    myTableView.delegate = self;
+    myTableView.dataSource = self;
+    [self.view addSubview:myTableView];
     
     
 }
@@ -43,18 +46,22 @@
 #pragma mark -- UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 44.0f ;
+    return 44.0f;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     switch (indexPath.row) {
         case 0:
-            [self gotoCYUIController] ;
+            [self gotoCYUIController];
             break;
             case 1:
         {
-            [self gotoCYTableController] ;
-            break ;
+            [self gotoCYTableController];
+            break;
+        }
+        case 2:
+        {
+            [self gotoProgressController];
         }
             
         default:
@@ -65,33 +72,36 @@
 #pragma mark -- UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_dataMuArray count] ;
+    return [_dataMuArray count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *idCell = @"myCellId" ;
-    UITableViewCell *myCell = [tableView dequeueReusableCellWithIdentifier:idCell] ;
+    static NSString *idCell = @"myCellId";
+    UITableViewCell *myCell = [tableView dequeueReusableCellWithIdentifier:idCell];
     if (myCell == nil) {
-        myCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:idCell] ;
+        myCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:idCell];
         myCell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
     }
-    NSString *titleString = _dataMuArray[indexPath.row] ;
-    myCell.detailTextLabel.text = titleString ;
-    return myCell ;
+    NSString *titleString = _dataMuArray[indexPath.row];
+    myCell.detailTextLabel.text = titleString;
+    return myCell;
 }
 
 #pragma mark --
 - (void)gotoCYUIController
 {
-    CYUIController * uiVC = [[CYUIController alloc] init] ;
-    [self.navigationController pushViewController:uiVC animated:NO] ;
-    
+    CYUIController * uiVC = [[CYUIController alloc] init];
+    [self.navigationController pushViewController:uiVC animated:NO];
 }
 - (void)gotoCYTableController
 {
-    CYTableController * uiVC = [[CYTableController alloc] init] ;
-    [self.navigationController pushViewController:uiVC animated:NO] ;
-    
+    CYTableController * uiVC = [[CYTableController alloc] init];
+    [self.navigationController pushViewController:uiVC animated:NO];
+}
+- (void)gotoProgressController
+{
+    CYProgressTableController * uiVC = [[CYProgressTableController alloc] init];
+    [self.navigationController pushViewController:uiVC animated:NO];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
