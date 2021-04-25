@@ -11,6 +11,7 @@
 #import "CYUIController.h"
 #import "CYTableController.h"
 #import "CYProgressTableController.h"
+#import "RecordVideoViewController.h"
 
 
 @interface CYMainController ()<UITableViewDelegate,UITableViewDataSource>
@@ -34,6 +35,7 @@
     [_dataMuArray addObject:@"UI部分"];
     [_dataMuArray addObject:@"UITableview 刷新方法"];
     [_dataMuArray addObject:@"MBProgressHUD+ECAdd"];
+    [_dataMuArray addObject:@"录制视频"];
     
     UITableView *myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)) style:UITableViewStylePlain];
     myTableView.delegate = self;
@@ -62,6 +64,12 @@
         case 2:
         {
             [self gotoProgressController];
+            break;
+        }
+        case 3:
+        {
+            [self gotoRecordVideoController];
+            break;
         }
             
         default:
@@ -90,18 +98,23 @@
 #pragma mark --
 - (void)gotoCYUIController
 {
-    CYUIController * uiVC = [[CYUIController alloc] init];
-    [self.navigationController pushViewController:uiVC animated:NO];
+    CYUIController * vc = [[CYUIController alloc] init];
+    [self.navigationController pushViewController:vc animated:NO];
 }
 - (void)gotoCYTableController
 {
-    CYTableController * uiVC = [[CYTableController alloc] init];
-    [self.navigationController pushViewController:uiVC animated:NO];
+    CYTableController * vc = [[CYTableController alloc] init];
+    [self.navigationController pushViewController:vc animated:NO];
 }
 - (void)gotoProgressController
 {
-    CYProgressTableController * uiVC = [[CYProgressTableController alloc] init];
-    [self.navigationController pushViewController:uiVC animated:NO];
+    CYProgressTableController * vc = [[CYProgressTableController alloc] init];
+    [self.navigationController pushViewController:vc animated:NO];
+}
+- (void)gotoRecordVideoController
+{
+    RecordVideoViewController *vc = RecordVideoViewController.new;
+    [self.navigationController pushViewController:vc animated:NO];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

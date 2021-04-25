@@ -26,6 +26,9 @@
 		E53863D325FB48010060D719 /* success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E53863CF25FB48010060D719 /* success@2x.png */; };
 		E53863D425FB48010060D719 /* error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E53863D025FB48010060D719 /* error@2x.png */; };
 		E53863D525FB48010060D719 /* success.png in Resources */ = {isa = PBXBuildFile; fileRef = E53863D125FB48010060D719 /* success.png */; };
+		E57495BF2635140A00A9C1AF /* RecordVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E57495BD2635140A00A9C1AF /* RecordVideoViewController.m */; };
+		E57495D626353B0700A9C1AF /* ECPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = E57495D526353B0700A9C1AF /* ECPreviewView.m */; };
+		E57495E226354DAD00A9C1AF /* ECCameraButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E57495E126354DAD00A9C1AF /* ECCameraButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +86,12 @@
 		E53863CF25FB48010060D719 /* success@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "success@2x.png"; sourceTree = "<group>"; };
 		E53863D025FB48010060D719 /* error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "error@2x.png"; sourceTree = "<group>"; };
 		E53863D125FB48010060D719 /* success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = success.png; sourceTree = "<group>"; };
+		E57495BC2635140A00A9C1AF /* RecordVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordVideoViewController.h; sourceTree = "<group>"; };
+		E57495BD2635140A00A9C1AF /* RecordVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordVideoViewController.m; sourceTree = "<group>"; };
+		E57495D426353B0700A9C1AF /* ECPreviewView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECPreviewView.h; sourceTree = "<group>"; };
+		E57495D526353B0700A9C1AF /* ECPreviewView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ECPreviewView.m; sourceTree = "<group>"; };
+		E57495E026354DAD00A9C1AF /* ECCameraButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECCameraButton.h; sourceTree = "<group>"; };
+		E57495E126354DAD00A9C1AF /* ECCameraButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ECCameraButton.m; sourceTree = "<group>"; };
 		E8FA244D951DCDAE15F0E937 /* Pods_iosProjects_iosProjectsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosProjects_iosProjectsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F21C312F2933ABB9DB65D5AE /* Pods-iosProjects-iosProjectsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosProjects-iosProjectsUITests.debug.xcconfig"; path = "Target Support Files/Pods-iosProjects-iosProjectsUITests/Pods-iosProjects-iosProjectsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -183,6 +192,7 @@
 		61F4E9A9207326C4001B9C27 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				E57495BB2635138B00A9C1AF /* RecordVideo */,
 				E53863B025FB3EA00060D719 /* MBProgressHUD+ECAdd */,
 				61F4E9B520736F12001B9C27 /* UITableView */,
 				61F4E9AD207355E4001B9C27 /* UIController */,
@@ -238,6 +248,27 @@
 				E53863CF25FB48010060D719 /* success@2x.png */,
 			);
 			path = "MBProgressHUD+ECAdd";
+			sourceTree = "<group>";
+		};
+		E57495BB2635138B00A9C1AF /* RecordVideo */ = {
+			isa = PBXGroup;
+			children = (
+				E57495D326353ACF00A9C1AF /* View */,
+				E57495BC2635140A00A9C1AF /* RecordVideoViewController.h */,
+				E57495BD2635140A00A9C1AF /* RecordVideoViewController.m */,
+			);
+			path = RecordVideo;
+			sourceTree = "<group>";
+		};
+		E57495D326353ACF00A9C1AF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E57495D426353B0700A9C1AF /* ECPreviewView.h */,
+				E57495D526353B0700A9C1AF /* ECPreviewView.m */,
+				E57495E026354DAD00A9C1AF /* ECCameraButton.h */,
+				E57495E126354DAD00A9C1AF /* ECCameraButton.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -486,7 +517,10 @@
 				61F4E9AC2073271C001B9C27 /* CYMainController.m in Sources */,
 				61F4E9B420735907001B9C27 /* CYBaseController.m in Sources */,
 				61F4E987207326A8001B9C27 /* main.m in Sources */,
+				E57495BF2635140A00A9C1AF /* RecordVideoViewController.m in Sources */,
 				61F4E979207326A5001B9C27 /* AppDelegate.m in Sources */,
+				E57495D626353B0700A9C1AF /* ECPreviewView.m in Sources */,
+				E57495E226354DAD00A9C1AF /* ECCameraButton.m in Sources */,
 				61F4E9B02073560C001B9C27 /* CYUIController.m in Sources */,
 				E53863B325FB3EA00060D719 /* MBProgressHUD+ECAdd.m in Sources */,
 			);
@@ -651,7 +685,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2UJ6BHR87H;
+				DEVELOPMENT_TEAM = JEAGCUN8WT;
 				INFOPLIST_FILE = iosProjects/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -670,7 +704,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2UJ6BHR87H;
+				DEVELOPMENT_TEAM = JEAGCUN8WT;
 				INFOPLIST_FILE = iosProjects/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
