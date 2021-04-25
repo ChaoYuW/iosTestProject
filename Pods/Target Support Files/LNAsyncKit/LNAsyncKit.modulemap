@@ -1,0 +1,6 @@
+framework module LNAsyncKit {
+  umbrella header "LNAsyncKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

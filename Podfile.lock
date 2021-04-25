@@ -1,16 +1,75 @@
 PODS:
+  - LNAsyncKit (0.0.1):
+    - LNAsyncKit/Cache (= 0.0.1)
+    - LNAsyncKit/Element (= 0.0.1)
+    - LNAsyncKit/Range (= 0.0.1)
+    - LNAsyncKit/Renderer (= 0.0.1)
+    - LNAsyncKit/Transaction (= 0.0.1)
+  - LNAsyncKit/Cache (0.0.1)
+  - LNAsyncKit/Element (0.0.1)
+  - LNAsyncKit/Range (0.0.1)
+  - LNAsyncKit/Renderer (0.0.1):
+    - LNAsyncKit/Element
+  - LNAsyncKit/Transaction (0.0.1)
   - MBProgressHUD (1.2.0)
+  - PINCache (3.0.3):
+    - PINCache/Arc-exception-safe (= 3.0.3)
+    - PINCache/Core (= 3.0.3)
+  - PINCache/Arc-exception-safe (3.0.3):
+    - PINCache/Core
+  - PINCache/Core (3.0.3):
+    - PINOperation (~> 1.2.1)
+  - PINOperation (1.2.1)
+  - PINRemoteImage/Core (3.0.3):
+    - PINOperation
+  - PINRemoteImage/iOS (3.0.3):
+    - PINRemoteImage/Core
+  - PINRemoteImage/PINCache (3.0.3):
+    - PINCache (~> 3.0.3)
+    - PINRemoteImage/Core
+  - Texture (3.0.0):
+    - Texture/AssetsLibrary (= 3.0.0)
+    - Texture/Core (= 3.0.0)
+    - Texture/MapKit (= 3.0.0)
+    - Texture/Photos (= 3.0.0)
+    - Texture/PINRemoteImage (= 3.0.0)
+    - Texture/Video (= 3.0.0)
+  - Texture/AssetsLibrary (3.0.0):
+    - Texture/Core
+  - Texture/Core (3.0.0)
+  - Texture/MapKit (3.0.0):
+    - Texture/Core
+  - Texture/Photos (3.0.0):
+    - Texture/Core
+  - Texture/PINRemoteImage (3.0.0):
+    - PINRemoteImage/iOS (~> 3.0.0)
+    - PINRemoteImage/PINCache
+    - Texture/Core
+  - Texture/Video (3.0.0):
+    - Texture/Core
 
 DEPENDENCIES:
+  - LNAsyncKit
   - MBProgressHUD
+  - Texture
 
 SPEC REPOS:
   trunk:
+    - LNAsyncKit
     - MBProgressHUD
+    - PINCache
+    - PINOperation
+    - PINRemoteImage
+    - Texture
 
 SPEC CHECKSUMS:
+  LNAsyncKit: f8cf6f03805f78df145063761ae748a9486bb232
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  PINCache: 7a8fc1a691173d21dbddbf86cd515de6efa55086
+  PINOperation: 00c935935f1e8cf0d1e2d6b542e75b88fc3e5e20
+  PINRemoteImage: f1295b29f8c5e640e25335a1b2bd9d805171bd01
+  Texture: 2f109e937850d94d1d07232041c9c7313ccddb81
 
-PODFILE CHECKSUM: ce7626ef0859913f15bb16324cc501c2782d6142
+PODFILE CHECKSUM: 0bab1b5b07eaa3f9d61fd2c42633c0649f37c9c0
 
 COCOAPODS: 1.10.0

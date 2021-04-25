@@ -54,7 +54,7 @@
             break;
         case 2:
         {
-            [MBProgressHUD showActivityIndicatorTitle:@"Loading" detailTitle:@"(1/1)" toView:self.view];
+            [MBProgressHUD showActivityIndicatorTitle:nil detailTitle:nil toView:self.view];
         }
             break;
         case 3:
