@@ -11,6 +11,7 @@ PODS:
   - LNAsyncKit/Renderer (0.0.1):
     - LNAsyncKit/Element
   - LNAsyncKit/Transaction (0.0.1)
+  - LookinServer (1.0.0)
   - MBProgressHUD (1.2.0)
   - PINCache (3.0.3):
     - PINCache/Arc-exception-safe (= 3.0.3)
@@ -50,12 +51,14 @@ PODS:
 
 DEPENDENCIES:
   - LNAsyncKit
+  - LookinServer
   - MBProgressHUD
   - Texture
 
 SPEC REPOS:
   trunk:
     - LNAsyncKit
+    - LookinServer
     - MBProgressHUD
     - PINCache
     - PINOperation
@@ -64,12 +67,13 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   LNAsyncKit: f8cf6f03805f78df145063761ae748a9486bb232
+  LookinServer: 0002891cd3cec5e082a910e897dfe71b4f06b89e
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   PINCache: 7a8fc1a691173d21dbddbf86cd515de6efa55086
   PINOperation: 00c935935f1e8cf0d1e2d6b542e75b88fc3e5e20
   PINRemoteImage: f1295b29f8c5e640e25335a1b2bd9d805171bd01
   Texture: 2f109e937850d94d1d07232041c9c7313ccddb81
 
-PODFILE CHECKSUM: 0bab1b5b07eaa3f9d61fd2c42633c0649f37c9c0
+PODFILE CHECKSUM: 2245d3e16268387bd1b327c76955f8088f91e149
 
 COCOAPODS: 1.10.0

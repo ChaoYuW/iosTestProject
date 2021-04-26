@@ -8,6 +8,7 @@ target 'iosProjects' do
   pod 'MBProgressHUD'
   pod 'LNAsyncKit'
   pod "Texture"
+  pod 'LookinServer', :configurations => ['Debug']
   # Pods for iosProjects
 
   target 'iosProjectsTests' do

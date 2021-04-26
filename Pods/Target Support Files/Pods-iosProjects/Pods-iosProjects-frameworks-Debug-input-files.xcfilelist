@@ -1,5 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-iosProjects/Pods-iosProjects-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/LNAsyncKit/LNAsyncKit.framework
+${PODS_ROOT}/LookinServer/LookinServer.framework
 ${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework
 ${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework
 ${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework

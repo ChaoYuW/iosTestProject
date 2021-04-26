@@ -31,4 +31,7 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 
 #define SafeViewBottomHeight (IS_IPhoneX ? 34.0f : 0.0f)
 
+#define KWeakSelf __weak typeof(self) weakSelf = self;
+#define KStrongSelf(type) __strong __typeof__(type) strongSelf = type;
+
 #endif /* enum_h */

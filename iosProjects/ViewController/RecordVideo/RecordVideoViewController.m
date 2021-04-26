@@ -11,6 +11,7 @@
 #import "ECPreviewView.h"
 #import "ECCameraButton.h"
 #import "enum.h"
+#import "ECPreviewImageView.h"
 
 #define START_VIDEO_ANIMATION_DURATION 0.3f                         // 录制视频前的动画时间
 #define TIMER_INTERVAL 0.01f                                        // 定时器记录视频间隔
@@ -21,12 +22,12 @@
 
 #define VIDEO_FILEPATH                                              @"video"
 
-@interface RecordVideoViewController ()<ECPreviewViewDelegate,AVCaptureAudioDataOutputSampleBufferDelegate,AVCaptureVideoDataOutputSampleBufferDelegate>
+@interface RecordVideoViewController ()<ECPreviewViewDelegate,AVCapturePhotoCaptureDelegate,AVCaptureAudioDataOutputSampleBufferDelegate,AVCaptureVideoDataOutputSampleBufferDelegate>
 
 
 @property (nonatomic, strong) AVCaptureSession *captureSession;//捕捉会话
 @property (nonatomic, weak)   AVCaptureDeviceInput *activeVideoInput;//输入
-@property (nonatomic, strong) AVCaptureStillImageOutput *imageOutput;//
+@property (strong,nonatomic) AVCapturePhotoOutput *imageOutput;
 @property (nonatomic, strong) dispatch_queue_t videoQueue;//视频队列
 @property (nonatomic, strong) AVCaptureVideoDataOutput *videoDataOutput;
 @property (nonatomic, strong) AVCaptureAudioDataOutput *audioDataOutput;
@@ -39,6 +40,7 @@
 @property (assign, nonatomic) UIDeviceOrientation shootingOrientation;                 //拍摄中的手机方向
 @property (nonatomic, assign) BOOL canWrite;
 @property (nonatomic, strong) ECPreviewView *previewView;
+@property (nonatomic, strong) ECPreviewImageView *previewImageView;
 
 @property (assign, nonatomic) Boolean isShooting;//正在拍摄
 @property (strong, nonatomic) ECCameraButton *cameraButton;
@@ -124,9 +126,10 @@
         return NO;
     }
     // AVCaptureStillImageOutput 实例 从摄像头捕捉静态图片
-    self.imageOutput = [[AVCaptureStillImageOutput alloc] init];
+//    self.imageOutput = [[AVCaptureStillImageOutput alloc] init];
     //配置字典 ：希望捕捉到JPEG格式图片
-    self.imageOutput.outputSettings = @{AVVideoCodecKey:AVVideoCodecJPEG};
+//    self.imageOutput.outputSettings = @{AVVideoCodecKey:AVVideoCodecJPEG};
+    self.imageOutput = AVCapturePhotoOutput.new;
     if ([self.captureSession canAddOutput:self.imageOutput]) {
         [self.captureSession addOutput:self.imageOutput];
     }
@@ -146,7 +149,13 @@
     {
         [self.captureSession addOutput:self.audioDataOutput];
     }
-    
+    AVCaptureConnection *connection = [self.imageOutput connectionWithMediaType:AVMediaTypeVideo];
+
+    //程序只支持纵向，但是如果用户横向拍照时，需要调整结果照片的方向
+    // 判断是否支持设置视频方向
+    if (connection.isVideoOrientationSupported) {
+        connection.videoOrientation = [self currentVideoOrientation];
+    }
     
     return YES;
     
@@ -205,6 +214,29 @@
             }
         }
     }
+}
+#pragma mark AVCapturePhotoCaptureDelegate 保存图片
+- (void)captureOutput:(AVCapturePhotoOutput *)output didFinishProcessingPhoto:(AVCapturePhoto *)photo error:(NSError *)error {
+    if (error) {
+        NSLog(@"获取图片错误 --- %@",error.localizedDescription);
+        return;
+    }
+    if (@available(iOS 11.0, *)) {
+        CGImageRef cgImage = [photo CGImageRepresentation];
+        NSLog(@"%@",photo.metadata);
+//        kCGImagePropertyOrientation
+        UIImageOrientation orient =  photo.metadata[@"Orientation"];
+        UIImage * image = [UIImage imageWithCGImage:cgImage scale:1 orientation:UIImageOrientationUp];
+//        self.previewImageView.backgroundColor = UIColor.orangeColor;
+        [self.view addSubview:self.previewImageView];
+        self.previewImageView.image = image;
+//        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+        
+    } else {
+        // Fallback on earlier versions
+    }
+    
+    
 }
 /**
  *  开始写入数据
@@ -270,17 +302,28 @@
  */
 - (void)takePhotos:(UITapGestureRecognizer *)tapGestureRecognizer
 {
-    AVCaptureConnection *captureConnection = [self.imageOutput connectionWithMediaType:AVMediaTypeVideo];
-    //根据连接取得设备输出的数据
-    [self.imageOutput captureStillImageAsynchronouslyFromConnection:captureConnection completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *error) {
-        if (imageDataSampleBuffer)
-        {
-            NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
-            UIImage *image = [UIImage imageWithData:imageData];
-            
-//            [self previewPhotoWithImage:image];
-        }
-    }];
+    
+    NSDictionary *setDic = @{AVVideoCodecKey:AVVideoCodecTypeJPEG};
+    AVCapturePhotoSettings* outputPhotoSettings = [AVCapturePhotoSettings photoSettingsWithFormat:setDic];
+    [self.imageOutput setPhotoSettingsForSceneMonitoring:outputPhotoSettings];
+    [self.imageOutput capturePhotoWithSettings:outputPhotoSettings delegate:self];
+    
+    
+    
+//    AVCaptureConnection *captureConnection = [self.imageOutput connectionWithMediaType:AVMediaTypeVideo];
+//    //根据连接取得设备输出的数据
+//    [self.imageOutput captureStillImageAsynchronouslyFromConnection:captureConnection completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *error) {
+//        if (imageDataSampleBuffer)
+//        {
+//            NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
+//            UIImage *image = [UIImage imageWithData:imageData];
+//
+//            self.previewImageView.image = image;
+//            self.previewImageView.backgroundColor = UIColor.orangeColor;
+//            [self.view addSubview:self.previewImageView];
+////            [self previewPhotoWithImage:image];
+//        }
+//    }];
 }
 #pragma mark - 视频录制
 
@@ -549,6 +592,27 @@
     
     return false;
 }
+// 获取方向值
+- (AVCaptureVideoOrientation)currentVideoOrientation {
+    AVCaptureVideoOrientation orientation;
+    
+    switch (UIDevice.currentDevice.orientation) {
+        case UIDeviceOrientationPortrait:
+            orientation = AVCaptureVideoOrientationPortrait;
+            break;
+        case UIDeviceOrientationLandscapeRight:
+            orientation = AVCaptureVideoOrientationLandscapeLeft;
+            break;
+        case UIDeviceOrientationPortraitUpsideDown:
+            orientation = AVCaptureVideoOrientationPortraitUpsideDown;
+            break;
+            
+        default:
+            orientation = AVCaptureVideoOrientationLandscapeRight;
+            break;
+    }
+    return orientation;
+}
 /**
  *  创建文件名
  */
@@ -581,6 +645,21 @@
     CGFloat cameraBtnY = SCREEN_HEIGHT - _cameraButton.bounds.size.height - 60 - SafeViewBottomHeight;    //距离底部60
     _cameraButton.frame = CGRectMake(cameraBtnX, cameraBtnY, _cameraButton.bounds.size.width, _cameraButton.bounds.size.height);
     return _cameraButton;
+}
+- (ECPreviewImageView *)previewImageView
+{
+    if (_previewImageView == nil) {
+        _previewImageView = ECPreviewImageView.new;
+        _previewImageView.frame = self.view.bounds;
+        
+        KWeakSelf
+        _previewImageView.closeBlock = ^{
+            
+            [weakSelf.previewImageView removeFromSuperview];
+            weakSelf.previewImageView = nil;
+        };
+    }
+    return _previewImageView;
 }
 /**
  *  开启定时器
