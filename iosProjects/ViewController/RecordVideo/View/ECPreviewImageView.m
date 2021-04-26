@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) UIButton *returnBtn;
 @property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) UIButton *finishBtn;
 
 @end
 
@@ -40,6 +41,7 @@
 {
     [self addSubview:self.imageView];
     [self addSubview:self.returnBtn];
+    [self addSubview:self.finishBtn];
 }
 
 - (void)layoutSubviews
@@ -51,6 +53,7 @@
 {
     self.returnBtn.frame = CGRectMake(20,NAVBAR_HEIGHT , 38, 38);
     self.imageView.frame = self.bounds;
+    self.finishBtn.frame = CGRectMake(SCREEN_WIDTH-60-25,SCREEN_HEIGHT - 30-25 , 60, 30);
 }
 - (void)setImage:(UIImage *)image
 {
@@ -62,7 +65,12 @@
         self.closeBlock();
     }
 }
-
+- (void)saveClick:(UIButton *)sender
+{
+    if (self.finishBlock) {
+        self.finishBlock();
+    }
+}
 
 - (UIButton *)returnBtn
 {
@@ -72,6 +80,17 @@
         [_returnBtn addTarget:self action:@selector(returnClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _returnBtn;
+}
+- (UIButton *)finishBtn
+{
+    if (_finishBtn == nil) {
+        _finishBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_finishBtn setTitle:@"完成" forState:UIControlStateNormal];
+        [_finishBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
+        [_finishBtn setBackgroundColor:[UIColor colorWithRed:28/255.0 green:184/255.0 blue:78/255.0 alpha:1]];
+        [_finishBtn addTarget:self action:@selector(saveClick:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _finishBtn;
 }
 - (UIImageView *)imageView
 {

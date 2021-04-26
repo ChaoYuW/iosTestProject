@@ -12,6 +12,7 @@
 #import "ECCameraButton.h"
 #import "enum.h"
 #import "ECPreviewImageView.h"
+#import "ECPreviewVideoView.h"
 
 #define START_VIDEO_ANIMATION_DURATION 0.3f                         // 录制视频前的动画时间
 #define TIMER_INTERVAL 0.01f                                        // 定时器记录视频间隔
@@ -41,9 +42,11 @@
 @property (nonatomic, assign) BOOL canWrite;
 @property (nonatomic, strong) ECPreviewView *previewView;
 @property (nonatomic, strong) ECPreviewImageView *previewImageView;
+@property (nonatomic, strong) ECPreviewVideoView *previewVideoView;
 
 @property (assign, nonatomic) Boolean isShooting;//正在拍摄
 @property (strong, nonatomic) ECCameraButton *cameraButton;
+@property (nonatomic, strong) UIButton *closeBtn;
 
 @property (nonatomic, strong) NSTimer *timer;//记录录制时间
 @property (strong, nonatomic) NSURL *videoURL;                                           //视频文件地址
@@ -60,6 +63,7 @@
     
     [self.view addSubview:self.previewView];
     [self.view addSubview:self.cameraButton];
+    [self.view addSubview:self.closeBtn];
     
     __weak typeof(self) weakSelf = self;
     [self.cameraButton configureTapCameraButtonEventWithBlock:^(UITapGestureRecognizer * _Nonnull tapGestureRecognizer) {
@@ -201,7 +205,6 @@
                 }
             }
         }
-        
         //音频
         if (connection == [self.audioDataOutput connectionWithMediaType:AVMediaTypeAudio])
         {
@@ -225,12 +228,18 @@
         CGImageRef cgImage = [photo CGImageRepresentation];
         NSLog(@"%@",photo.metadata);
 //        kCGImagePropertyOrientation
+        NSData *data = photo.fileDataRepresentation;
+        
         UIImageOrientation orient =  photo.metadata[@"Orientation"];
-        UIImage * image = [UIImage imageWithCGImage:cgImage scale:1 orientation:UIImageOrientationUp];
+//        UIImage * image = [UIImage imageWithCGImage:cgImage scale:1 orientation:UIImageOrientationRight];
+        UIImage *image = [UIImage imageWithData:data];
 //        self.previewImageView.backgroundColor = UIColor.orangeColor;
         [self.view addSubview:self.previewImageView];
         self.previewImageView.image = image;
 //        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+        
+        
+//        and
         
     } else {
         // Fallback on earlier versions
@@ -296,7 +305,6 @@
 //    });
 }
 #pragma mark - 拍照功能
-
 /**
  *  拍照方法
  */
@@ -410,7 +418,11 @@
         }
         
         [self.cameraButton setHidden:YES];
-        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            [weakSelf previewVideoAfterShoot];
+            
+        });
     }
 }
 /**
@@ -592,6 +604,11 @@
     
     return false;
 }
+- (void)previewVideoAfterShoot
+{
+    [self.view addSubview:self.previewVideoView];
+    self.previewVideoView.videoURL = self.videoURL;
+}
 // 获取方向值
 - (AVCaptureVideoOrientation)currentVideoOrientation {
     AVCaptureVideoOrientation orientation;
@@ -646,6 +663,19 @@
     _cameraButton.frame = CGRectMake(cameraBtnX, cameraBtnY, _cameraButton.bounds.size.width, _cameraButton.bounds.size.height);
     return _cameraButton;
 }
+- (UIButton *)closeBtn
+{
+    if (_closeBtn) {
+        return _closeBtn;
+    }
+    _closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    CGFloat cameraBtnY = self.cameraButton.center.y;
+    _closeBtn.frame = CGRectMake(25, cameraBtnY-19, 38, 38);
+    [_closeBtn setImage:[UIImage imageNamed:@"icon_close_"] forState:UIControlStateNormal];
+    [_closeBtn addTarget:self action:@selector(closeClick:) forControlEvents:UIControlEventTouchUpInside];
+    return _closeBtn;
+}
 - (ECPreviewImageView *)previewImageView
 {
     if (_previewImageView == nil) {
@@ -658,8 +688,39 @@
             [weakSelf.previewImageView removeFromSuperview];
             weakSelf.previewImageView = nil;
         };
+        _previewImageView.finishBlock = ^{
+            UIImageWriteToSavedPhotosAlbum(weakSelf.previewImageView.image, nil, nil, nil);
+            [weakSelf.previewImageView removeFromSuperview];
+            weakSelf.previewImageView = nil;
+            [weakSelf dismissViewControllerAnimated:YES completion:nil];
+        };
     }
     return _previewImageView;
+}
+- (ECPreviewVideoView *)previewVideoView
+{
+    if (_previewVideoView) {
+        return _previewVideoView;
+    }
+    _previewVideoView = ECPreviewVideoView.new;
+    _previewVideoView.frame = self.view.bounds;
+    KWeakSelf
+    _previewVideoView.closeBlock = ^{
+        
+        [weakSelf.previewVideoView removeFromSuperview];
+        weakSelf.previewVideoView = nil;
+    };
+    _previewVideoView.finishBlock = ^{
+//        UIImageWriteToSavedPhotosAlbum(weakSelf.previewImageView.image, nil, nil, nil);
+        [weakSelf.previewVideoView removeFromSuperview];
+        weakSelf.previewVideoView = nil;
+        [weakSelf dismissViewControllerAnimated:YES completion:nil];
+    };
+    return _previewVideoView;
+}
+- (void)closeClick:(UIButton *)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 /**
  *  开启定时器

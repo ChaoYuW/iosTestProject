@@ -52,11 +52,12 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     switch (indexPath.row) {
         case 0:
             [self gotoCYUIController];
             break;
-            case 1:
+        case 1:
         {
             [self gotoCYTableController];
             break;
@@ -114,7 +115,8 @@
 - (void)gotoRecordVideoController
 {
     RecordVideoViewController *vc = RecordVideoViewController.new;
-    [self.navigationController pushViewController:vc animated:NO];
+    vc.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:vc animated:YES completion:nil];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -30,6 +30,7 @@
 		E57495D626353B0700A9C1AF /* ECPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = E57495D526353B0700A9C1AF /* ECPreviewView.m */; };
 		E57495E226354DAD00A9C1AF /* ECCameraButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E57495E126354DAD00A9C1AF /* ECCameraButton.m */; };
 		E57495E82636531200A9C1AF /* ECPreviewImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E57495E72636531200A9C1AF /* ECPreviewImageView.m */; };
+		E57496012636A89700A9C1AF /* ECPreviewVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = E57496002636A89700A9C1AF /* ECPreviewVideoView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,8 @@
 		E57495E126354DAD00A9C1AF /* ECCameraButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ECCameraButton.m; sourceTree = "<group>"; };
 		E57495E62636531200A9C1AF /* ECPreviewImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECPreviewImageView.h; sourceTree = "<group>"; };
 		E57495E72636531200A9C1AF /* ECPreviewImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ECPreviewImageView.m; sourceTree = "<group>"; };
+		E57495FF2636A89700A9C1AF /* ECPreviewVideoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECPreviewVideoView.h; sourceTree = "<group>"; };
+		E57496002636A89700A9C1AF /* ECPreviewVideoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ECPreviewVideoView.m; sourceTree = "<group>"; };
 		E8FA244D951DCDAE15F0E937 /* Pods_iosProjects_iosProjectsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosProjects_iosProjectsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F21C312F2933ABB9DB65D5AE /* Pods-iosProjects-iosProjectsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosProjects-iosProjectsUITests.debug.xcconfig"; path = "Target Support Files/Pods-iosProjects-iosProjectsUITests/Pods-iosProjects-iosProjectsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -270,6 +273,8 @@
 				E57495D526353B0700A9C1AF /* ECPreviewView.m */,
 				E57495E62636531200A9C1AF /* ECPreviewImageView.h */,
 				E57495E72636531200A9C1AF /* ECPreviewImageView.m */,
+				E57495FF2636A89700A9C1AF /* ECPreviewVideoView.h */,
+				E57496002636A89700A9C1AF /* ECPreviewVideoView.m */,
 				E57495E026354DAD00A9C1AF /* ECCameraButton.h */,
 				E57495E126354DAD00A9C1AF /* ECCameraButton.m */,
 			);
@@ -522,6 +527,7 @@
 				61F4E9AC2073271C001B9C27 /* CYMainController.m in Sources */,
 				E57495E82636531200A9C1AF /* ECPreviewImageView.m in Sources */,
 				61F4E9B420735907001B9C27 /* CYBaseController.m in Sources */,
+				E57496012636A89700A9C1AF /* ECPreviewVideoView.m in Sources */,
 				61F4E987207326A8001B9C27 /* main.m in Sources */,
 				E57495BF2635140A00A9C1AF /* RecordVideoViewController.m in Sources */,
 				61F4E979207326A5001B9C27 /* AppDelegate.m in Sources */,
