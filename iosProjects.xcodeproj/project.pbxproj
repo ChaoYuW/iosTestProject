@@ -31,6 +31,38 @@
 		E57495E226354DAD00A9C1AF /* ECCameraButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E57495E126354DAD00A9C1AF /* ECCameraButton.m */; };
 		E57495E82636531200A9C1AF /* ECPreviewImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E57495E72636531200A9C1AF /* ECPreviewImageView.m */; };
 		E57496012636A89700A9C1AF /* ECPreviewVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = E57496002636A89700A9C1AF /* ECPreviewVideoView.m */; };
+		E5E0223C2689D76A009E321D /* DYRZ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5E022122689D76A009E321D /* DYRZ.framework */; };
+		E5E0223D2689D76A009E321D /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E022182689D76A009E321D /* AFURLResponseSerialization.m */; };
+		E5E0223E2689D76A009E321D /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E022192689D76A009E321D /* AFHTTPSessionManager.m */; };
+		E5E0223F2689D76A009E321D /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E0221B2689D76A009E321D /* AFURLSessionManager.m */; };
+		E5E022402689D76A009E321D /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E0221C2689D76A009E321D /* AFURLRequestSerialization.m */; };
+		E5E022412689D76A009E321D /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E0221E2689D76A009E321D /* AFNetworkReachabilityManager.m */; };
+		E5E022422689D76A009E321D /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E0221F2689D76A009E321D /* AFSecurityPolicy.m */; };
+		E5E022432689D76A009E321D /* DYRZRes.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E5E022222689D76A009E321D /* DYRZRes.bundle */; };
+		E5E022442689D76A009E321D /* HuiYanSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5E022242689D76A009E321D /* HuiYanSDK.framework */; };
+		E5E022452689D76A009E321D /* libTuringShieldCamRisk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5E022252689D76A009E321D /* libTuringShieldCamRisk.a */; };
+		E5E022462689D76A009E321D /* TXYComm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5E022262689D76A009E321D /* TXYComm.framework */; };
+		E5E022472689D76A009E321D /* YTFaceSDK_Debug.license in Resources */ = {isa = PBXBuildFile; fileRef = E5E022272689D76A009E321D /* YTFaceSDK_Debug.license */; };
+		E5E022482689D76A009E321D /* YtSDKKitSilentLiveness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5E0222A2689D76A009E321D /* YtSDKKitSilentLiveness.framework */; };
+		E5E022492689D76A009E321D /* YtSDKKitReflectLiveness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5E0222B2689D76A009E321D /* YtSDKKitReflectLiveness.framework */; };
+		E5E0224A2689D76A009E321D /* YtSDKKitActionLiveness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5E0222C2689D76A009E321D /* YtSDKKitActionLiveness.framework */; };
+		E5E0224B2689D76A009E321D /* YtSDKKitFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5E0222D2689D76A009E321D /* YtSDKKitFramework.framework */; };
+		E5E0224C2689D76A009E321D /* YTFaceDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5E0222F2689D76A009E321D /* YTFaceDetector.framework */; };
+		E5E0224D2689D76A009E321D /* tnn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5E022302689D76A009E321D /* tnn.framework */; };
+		E5E0224E2689D76A009E321D /* YTCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5E022312689D76A009E321D /* YTCommon.framework */; };
+		E5E0224F2689D76A009E321D /* YTFaceTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5E022322689D76A009E321D /* YTFaceTracker.framework */; };
+		E5E022502689D76A009E321D /* YTPoseDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5E022332689D76A009E321D /* YTPoseDetector.framework */; };
+		E5E022512689D76A009E321D /* YTFaceAlignmentTiny.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5E022342689D76A009E321D /* YTFaceAlignmentTiny.framework */; };
+		E5E022522689D76A009E321D /* YTFaceLiveReflect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5E022352689D76A009E321D /* YTFaceLiveReflect.framework */; };
+		E5E022532689D76A009E321D /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5E022362689D76A009E321D /* opencv2.framework */; };
+		E5E022542689D76A009E321D /* YTFaceSDK_Release.license in Resources */ = {isa = PBXBuildFile; fileRef = E5E022372689D76A009E321D /* YTFaceSDK_Release.license */; };
+		E5E022552689D76A009E321D /* face-tracker-v001.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E5E022392689D76A009E321D /* face-tracker-v001.bundle */; };
+		E5E022562689D76A009E321D /* readnum6098.spx in Resources */ = {isa = PBXBuildFile; fileRef = E5E0223A2689D76A009E321D /* readnum6098.spx */; };
+		E5E022572689D76A009E321D /* HuiYanSDKUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E5E0223B2689D76A009E321D /* HuiYanSDKUI.bundle */; };
+		E5E0225E2689DA1D009E321D /* DyrzViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E0225A2689DA1A009E321D /* DyrzViewController.m */; };
+		E5E0225F2689DA1D009E321D /* DYRZItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5E0225C2689DA1C009E321D /* DYRZItemCell.xib */; };
+		E5E022602689DA1D009E321D /* DyrzResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E0225D2689DA1D009E321D /* DyrzResultViewController.m */; };
+		E5E022622689DAE6009E321D /* DyrzViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5E022612689DAE6009E321D /* DyrzViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +130,48 @@
 		E57495E72636531200A9C1AF /* ECPreviewImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ECPreviewImageView.m; sourceTree = "<group>"; };
 		E57495FF2636A89700A9C1AF /* ECPreviewVideoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECPreviewVideoView.h; sourceTree = "<group>"; };
 		E57496002636A89700A9C1AF /* ECPreviewVideoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ECPreviewVideoView.m; sourceTree = "<group>"; };
+		E5E022122689D76A009E321D /* DYRZ.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DYRZ.framework; sourceTree = "<group>"; };
+		E5E022142689D76A009E321D /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		E5E022152689D76A009E321D /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		E5E022162689D76A009E321D /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		E5E022172689D76A009E321D /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		E5E022182689D76A009E321D /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		E5E022192689D76A009E321D /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		E5E0221A2689D76A009E321D /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		E5E0221B2689D76A009E321D /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		E5E0221C2689D76A009E321D /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		E5E0221D2689D76A009E321D /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		E5E0221E2689D76A009E321D /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		E5E0221F2689D76A009E321D /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		E5E022202689D76A009E321D /* AFCompatibilityMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFCompatibilityMacros.h; sourceTree = "<group>"; };
+		E5E022212689D76A009E321D /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		E5E022222689D76A009E321D /* DYRZRes.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DYRZRes.bundle; sourceTree = "<group>"; };
+		E5E022242689D76A009E321D /* HuiYanSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HuiYanSDK.framework; sourceTree = "<group>"; };
+		E5E022252689D76A009E321D /* libTuringShieldCamRisk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTuringShieldCamRisk.a; sourceTree = "<group>"; };
+		E5E022262689D76A009E321D /* TXYComm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TXYComm.framework; sourceTree = "<group>"; };
+		E5E022272689D76A009E321D /* YTFaceSDK_Debug.license */ = {isa = PBXFileReference; lastKnownFileType = file; path = YTFaceSDK_Debug.license; sourceTree = "<group>"; };
+		E5E0222A2689D76A009E321D /* YtSDKKitSilentLiveness.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YtSDKKitSilentLiveness.framework; sourceTree = "<group>"; };
+		E5E0222B2689D76A009E321D /* YtSDKKitReflectLiveness.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YtSDKKitReflectLiveness.framework; sourceTree = "<group>"; };
+		E5E0222C2689D76A009E321D /* YtSDKKitActionLiveness.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YtSDKKitActionLiveness.framework; sourceTree = "<group>"; };
+		E5E0222D2689D76A009E321D /* YtSDKKitFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YtSDKKitFramework.framework; sourceTree = "<group>"; };
+		E5E0222F2689D76A009E321D /* YTFaceDetector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YTFaceDetector.framework; sourceTree = "<group>"; };
+		E5E022302689D76A009E321D /* tnn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = tnn.framework; sourceTree = "<group>"; };
+		E5E022312689D76A009E321D /* YTCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YTCommon.framework; sourceTree = "<group>"; };
+		E5E022322689D76A009E321D /* YTFaceTracker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YTFaceTracker.framework; sourceTree = "<group>"; };
+		E5E022332689D76A009E321D /* YTPoseDetector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YTPoseDetector.framework; sourceTree = "<group>"; };
+		E5E022342689D76A009E321D /* YTFaceAlignmentTiny.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YTFaceAlignmentTiny.framework; sourceTree = "<group>"; };
+		E5E022352689D76A009E321D /* YTFaceLiveReflect.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YTFaceLiveReflect.framework; sourceTree = "<group>"; };
+		E5E022362689D76A009E321D /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		E5E022372689D76A009E321D /* YTFaceSDK_Release.license */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = YTFaceSDK_Release.license; sourceTree = "<group>"; };
+		E5E022392689D76A009E321D /* face-tracker-v001.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "face-tracker-v001.bundle"; sourceTree = "<group>"; };
+		E5E0223A2689D76A009E321D /* readnum6098.spx */ = {isa = PBXFileReference; lastKnownFileType = file; path = readnum6098.spx; sourceTree = "<group>"; };
+		E5E0223B2689D76A009E321D /* HuiYanSDKUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HuiYanSDKUI.bundle; sourceTree = "<group>"; };
+		E5E022592689DA1A009E321D /* DyrzViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DyrzViewController.h; sourceTree = "<group>"; };
+		E5E0225A2689DA1A009E321D /* DyrzViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DyrzViewController.m; sourceTree = "<group>"; };
+		E5E0225B2689DA1B009E321D /* DyrzResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DyrzResultViewController.h; sourceTree = "<group>"; };
+		E5E0225C2689DA1C009E321D /* DYRZItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DYRZItemCell.xib; sourceTree = "<group>"; };
+		E5E0225D2689DA1D009E321D /* DyrzResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DyrzResultViewController.m; sourceTree = "<group>"; };
+		E5E022612689DAE6009E321D /* DyrzViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DyrzViewController.xib; sourceTree = "<group>"; };
 		E8FA244D951DCDAE15F0E937 /* Pods_iosProjects_iosProjectsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosProjects_iosProjectsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F21C312F2933ABB9DB65D5AE /* Pods-iosProjects-iosProjectsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosProjects-iosProjectsUITests.debug.xcconfig"; path = "Target Support Files/Pods-iosProjects-iosProjectsUITests/Pods-iosProjects-iosProjectsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,7 +181,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5E022532689D76A009E321D /* opencv2.framework in Frameworks */,
+				E5E022462689D76A009E321D /* TXYComm.framework in Frameworks */,
 				55F5517E115C0EDAD6D060B5 /* Pods_iosProjects.framework in Frameworks */,
+				E5E022502689D76A009E321D /* YTPoseDetector.framework in Frameworks */,
+				E5E0224F2689D76A009E321D /* YTFaceTracker.framework in Frameworks */,
+				E5E022482689D76A009E321D /* YtSDKKitSilentLiveness.framework in Frameworks */,
+				E5E022492689D76A009E321D /* YtSDKKitReflectLiveness.framework in Frameworks */,
+				E5E022512689D76A009E321D /* YTFaceAlignmentTiny.framework in Frameworks */,
+				E5E0224C2689D76A009E321D /* YTFaceDetector.framework in Frameworks */,
+				E5E022522689D76A009E321D /* YTFaceLiveReflect.framework in Frameworks */,
+				E5E0224B2689D76A009E321D /* YtSDKKitFramework.framework in Frameworks */,
+				E5E0224A2689D76A009E321D /* YtSDKKitActionLiveness.framework in Frameworks */,
+				E5E022442689D76A009E321D /* HuiYanSDK.framework in Frameworks */,
+				E5E0224E2689D76A009E321D /* YTCommon.framework in Frameworks */,
+				E5E022452689D76A009E321D /* libTuringShieldCamRisk.a in Frameworks */,
+				E5E0224D2689D76A009E321D /* tnn.framework in Frameworks */,
+				E5E0223C2689D76A009E321D /* DYRZ.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +233,7 @@
 		61F4E96B207326A5001B9C27 = {
 			isa = PBXGroup;
 			children = (
+				E5E022112689D76A009E321D /* DYRZSDK */,
 				61F4E976207326A5001B9C27 /* iosProjects */,
 				61F4E98F207326A8001B9C27 /* iosProjectsTests */,
 				61F4E99A207326A8001B9C27 /* iosProjectsUITests */,
@@ -198,6 +289,7 @@
 		61F4E9A9207326C4001B9C27 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				E5E022582689DA06009E321D /* DYRZ */,
 				E57495BB2635138B00A9C1AF /* RecordVideo */,
 				E53863B025FB3EA00060D719 /* MBProgressHUD+ECAdd */,
 				61F4E9B520736F12001B9C27 /* UITableView */,
@@ -279,6 +371,110 @@
 				E57495E126354DAD00A9C1AF /* ECCameraButton.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E5E022112689D76A009E321D /* DYRZSDK */ = {
+			isa = PBXGroup;
+			children = (
+				E5E022122689D76A009E321D /* DYRZ.framework */,
+				E5E022132689D76A009E321D /* AFNetworking */,
+				E5E022222689D76A009E321D /* DYRZRes.bundle */,
+				E5E022232689D76A009E321D /* TXFKFaceSDK */,
+			);
+			path = DYRZSDK;
+			sourceTree = "<group>";
+		};
+		E5E022132689D76A009E321D /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				E5E022142689D76A009E321D /* AFSecurityPolicy.h */,
+				E5E022152689D76A009E321D /* AFNetworkReachabilityManager.h */,
+				E5E022162689D76A009E321D /* AFURLSessionManager.h */,
+				E5E022172689D76A009E321D /* AFURLRequestSerialization.h */,
+				E5E022182689D76A009E321D /* AFURLResponseSerialization.m */,
+				E5E022192689D76A009E321D /* AFHTTPSessionManager.m */,
+				E5E0221A2689D76A009E321D /* AFURLResponseSerialization.h */,
+				E5E0221B2689D76A009E321D /* AFURLSessionManager.m */,
+				E5E0221C2689D76A009E321D /* AFURLRequestSerialization.m */,
+				E5E0221D2689D76A009E321D /* AFNetworking.h */,
+				E5E0221E2689D76A009E321D /* AFNetworkReachabilityManager.m */,
+				E5E0221F2689D76A009E321D /* AFSecurityPolicy.m */,
+				E5E022202689D76A009E321D /* AFCompatibilityMacros.h */,
+				E5E022212689D76A009E321D /* AFHTTPSessionManager.h */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		E5E022232689D76A009E321D /* TXFKFaceSDK */ = {
+			isa = PBXGroup;
+			children = (
+				E5E022242689D76A009E321D /* HuiYanSDK.framework */,
+				E5E022252689D76A009E321D /* libTuringShieldCamRisk.a */,
+				E5E022262689D76A009E321D /* TXYComm.framework */,
+				E5E022272689D76A009E321D /* YTFaceSDK_Debug.license */,
+				E5E022282689D76A009E321D /* ytFrameworks */,
+				E5E022372689D76A009E321D /* YTFaceSDK_Release.license */,
+				E5E022382689D76A009E321D /* resource */,
+			);
+			path = TXFKFaceSDK;
+			sourceTree = "<group>";
+		};
+		E5E022282689D76A009E321D /* ytFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E5E022292689D76A009E321D /* YtSDKKitFramework */,
+				E5E0222E2689D76A009E321D /* YtFrameworks */,
+			);
+			path = ytFrameworks;
+			sourceTree = "<group>";
+		};
+		E5E022292689D76A009E321D /* YtSDKKitFramework */ = {
+			isa = PBXGroup;
+			children = (
+				E5E0222A2689D76A009E321D /* YtSDKKitSilentLiveness.framework */,
+				E5E0222B2689D76A009E321D /* YtSDKKitReflectLiveness.framework */,
+				E5E0222C2689D76A009E321D /* YtSDKKitActionLiveness.framework */,
+				E5E0222D2689D76A009E321D /* YtSDKKitFramework.framework */,
+			);
+			path = YtSDKKitFramework;
+			sourceTree = "<group>";
+		};
+		E5E0222E2689D76A009E321D /* YtFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E5E0222F2689D76A009E321D /* YTFaceDetector.framework */,
+				E5E022302689D76A009E321D /* tnn.framework */,
+				E5E022312689D76A009E321D /* YTCommon.framework */,
+				E5E022322689D76A009E321D /* YTFaceTracker.framework */,
+				E5E022332689D76A009E321D /* YTPoseDetector.framework */,
+				E5E022342689D76A009E321D /* YTFaceAlignmentTiny.framework */,
+				E5E022352689D76A009E321D /* YTFaceLiveReflect.framework */,
+				E5E022362689D76A009E321D /* opencv2.framework */,
+			);
+			path = YtFrameworks;
+			sourceTree = "<group>";
+		};
+		E5E022382689D76A009E321D /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				E5E022392689D76A009E321D /* face-tracker-v001.bundle */,
+				E5E0223A2689D76A009E321D /* readnum6098.spx */,
+				E5E0223B2689D76A009E321D /* HuiYanSDKUI.bundle */,
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
+		E5E022582689DA06009E321D /* DYRZ */ = {
+			isa = PBXGroup;
+			children = (
+				E5E0225C2689DA1C009E321D /* DYRZItemCell.xib */,
+				E5E0225B2689DA1B009E321D /* DyrzResultViewController.h */,
+				E5E0225D2689DA1D009E321D /* DyrzResultViewController.m */,
+				E5E022592689DA1A009E321D /* DyrzViewController.h */,
+				E5E0225A2689DA1A009E321D /* DyrzViewController.m */,
+				E5E022612689DAE6009E321D /* DyrzViewController.xib */,
+			);
+			path = DYRZ;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -392,9 +588,17 @@
 				E53863D325FB48010060D719 /* success@2x.png in Resources */,
 				E53863D525FB48010060D719 /* success.png in Resources */,
 				E53863D425FB48010060D719 /* error@2x.png in Resources */,
+				E5E022432689D76A009E321D /* DYRZRes.bundle in Resources */,
+				E5E022572689D76A009E321D /* HuiYanSDKUI.bundle in Resources */,
+				E5E022472689D76A009E321D /* YTFaceSDK_Debug.license in Resources */,
 				61F4E984207326A8001B9C27 /* LaunchScreen.storyboard in Resources */,
+				E5E022552689D76A009E321D /* face-tracker-v001.bundle in Resources */,
+				E5E0225F2689DA1D009E321D /* DYRZItemCell.xib in Resources */,
 				61F4E981207326A8001B9C27 /* Assets.xcassets in Resources */,
+				E5E022562689D76A009E321D /* readnum6098.spx in Resources */,
 				E53863D225FB48010060D719 /* error.png in Resources */,
+				E5E022542689D76A009E321D /* YTFaceSDK_Release.license in Resources */,
+				E5E022622689DAE6009E321D /* DyrzViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,14 +730,22 @@
 				61F4E9B820736F86001B9C27 /* CYTableController.m in Sources */,
 				61F4E9AC2073271C001B9C27 /* CYMainController.m in Sources */,
 				E57495E82636531200A9C1AF /* ECPreviewImageView.m in Sources */,
+				E5E022602689DA1D009E321D /* DyrzResultViewController.m in Sources */,
 				61F4E9B420735907001B9C27 /* CYBaseController.m in Sources */,
 				E57496012636A89700A9C1AF /* ECPreviewVideoView.m in Sources */,
+				E5E022422689D76A009E321D /* AFSecurityPolicy.m in Sources */,
 				61F4E987207326A8001B9C27 /* main.m in Sources */,
 				E57495BF2635140A00A9C1AF /* RecordVideoViewController.m in Sources */,
 				61F4E979207326A5001B9C27 /* AppDelegate.m in Sources */,
+				E5E0223E2689D76A009E321D /* AFHTTPSessionManager.m in Sources */,
+				E5E0225E2689DA1D009E321D /* DyrzViewController.m in Sources */,
 				E57495D626353B0700A9C1AF /* ECPreviewView.m in Sources */,
 				E57495E226354DAD00A9C1AF /* ECCameraButton.m in Sources */,
+				E5E0223F2689D76A009E321D /* AFURLSessionManager.m in Sources */,
+				E5E0223D2689D76A009E321D /* AFURLResponseSerialization.m in Sources */,
 				61F4E9B02073560C001B9C27 /* CYUIController.m in Sources */,
+				E5E022402689D76A009E321D /* AFURLRequestSerialization.m in Sources */,
+				E5E022412689D76A009E321D /* AFNetworkReachabilityManager.m in Sources */,
 				E53863B325FB3EA00060D719 /* MBProgressHUD+ECAdd.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -698,13 +910,44 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JEAGCUN8WT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iosProjects",
+					"$(PROJECT_DIR)/DYRZSDK/TXFKFaceSDK/ytFrameworks/YtSDKKitFramework",
+					"$(PROJECT_DIR)/DYRZSDK/TXFKFaceSDK/ytFrameworks/YtFrameworks",
+					"$(PROJECT_DIR)/AliPay",
+					"$(PROJECT_DIR)/TencentFace",
+					"$(PROJECT_DIR)/TXFKFaceSDK",
+					"$(PROJECT_DIR)/TXFKFaceSDK/ytFrameworks/YtSDKKitFramework",
+					"$(PROJECT_DIR)/TXFKFaceSDK/ytFrameworks/YtFrameworks",
+					"$(PROJECT_DIR)/DYRZSDK",
+					"$(PROJECT_DIR)/DYRZSDK/TXFKFaceSDK",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/LNAsyncKit/LNAsyncKit.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD/MBProgressHUD.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PINCache/PINCache.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PINOperation/PINOperation.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PINRemoteImage/PINRemoteImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Texture/AsyncDisplayKit.framework/Headers\"",
+					"$(PROJECT_DIR)/DYRZSDK",
+				);
 				INFOPLIST_FILE = iosProjects/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.qianlong.zy;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iosProjects/DYRZSDK/TXFKFaceSDK",
+					"$(PROJECT_DIR)/iosProjects/TXFKFaceSDK",
+					"$(PROJECT_DIR)/DYRZSDK/openssl",
+					"$(PROJECT_DIR)/DYRZSDK/WechatSDK",
+					"$(PROJECT_DIR)/DYRZSDK/TXFKFaceSDK",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mediaNotEasy.wdit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -717,13 +960,44 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JEAGCUN8WT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iosProjects",
+					"$(PROJECT_DIR)/DYRZSDK/TXFKFaceSDK/ytFrameworks/YtSDKKitFramework",
+					"$(PROJECT_DIR)/DYRZSDK/TXFKFaceSDK/ytFrameworks/YtFrameworks",
+					"$(PROJECT_DIR)/AliPay",
+					"$(PROJECT_DIR)/TencentFace",
+					"$(PROJECT_DIR)/TXFKFaceSDK",
+					"$(PROJECT_DIR)/TXFKFaceSDK/ytFrameworks/YtSDKKitFramework",
+					"$(PROJECT_DIR)/TXFKFaceSDK/ytFrameworks/YtFrameworks",
+					"$(PROJECT_DIR)/DYRZSDK",
+					"$(PROJECT_DIR)/DYRZSDK/TXFKFaceSDK",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/LNAsyncKit/LNAsyncKit.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD/MBProgressHUD.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PINCache/PINCache.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PINOperation/PINOperation.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PINRemoteImage/PINRemoteImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Texture/AsyncDisplayKit.framework/Headers\"",
+					"$(PROJECT_DIR)/DYRZSDK",
+				);
 				INFOPLIST_FILE = iosProjects/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.qianlong.zy;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iosProjects/DYRZSDK/TXFKFaceSDK",
+					"$(PROJECT_DIR)/iosProjects/TXFKFaceSDK",
+					"$(PROJECT_DIR)/DYRZSDK/openssl",
+					"$(PROJECT_DIR)/DYRZSDK/WechatSDK",
+					"$(PROJECT_DIR)/DYRZSDK/TXFKFaceSDK",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mediaNotEasy.wdit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

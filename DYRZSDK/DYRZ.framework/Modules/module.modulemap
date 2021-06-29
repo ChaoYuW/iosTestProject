@@ -1,0 +1,6 @@
+framework module DYRZ {
+  umbrella header "DYRZ.h"
+
+  export *
+  module * { export * }
+}
