@@ -12,10 +12,6 @@
 #import "CYTableController.h"
 #import "CYProgressTableController.h"
 #import "RecordVideoViewController.h"
-#import "DyrzViewController.h"
-
-
-
 
 @interface CYMainController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -79,8 +75,6 @@
         }
         case 4:
         {
-            
-            [self gotoDYRZController];
             break;
         }
             
@@ -128,11 +122,6 @@
     RecordVideoViewController *vc = RecordVideoViewController.new;
     vc.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:vc animated:YES completion:nil];
-}
-- (void)gotoDYRZController
-{
-    DyrzViewController *vc = [[DyrzViewController alloc] initWithNibName:@"DyrzViewController" bundle:nil];
-    [self.navigationController pushViewController:vc animated:NO];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
