@@ -12,6 +12,7 @@
 #import "CYTableController.h"
 #import "CYProgressTableController.h"
 #import "RecordVideoViewController.h"
+#import "OffscreenRenderingTableViewController.h"
 
 @interface CYMainController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -36,6 +37,7 @@
     [_dataMuArray addObject:@"MBProgressHUD+ECAdd"];
     [_dataMuArray addObject:@"录制视频"];
     [_dataMuArray addObject:@"人脸识别"];
+    [_dataMuArray addObject:@"离屏渲染"];
     
     UITableView *myTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)) style:UITableViewStylePlain];
     myTableView.delegate = self;
@@ -53,33 +55,21 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    switch (indexPath.row) {
-        case 0:
-            [self gotoCYUIController];
-            
-            break;
-        case 1:
-        {
-            [self gotoCYTableController];
-            break;
-        }
-        case 2:
-        {
-            [self gotoProgressController];
-            break;
-        }
-        case 3:
-        {
-            [self gotoRecordVideoController];
-            break;
-        }
-        case 4:
-        {
-            break;
-        }
-            
-        default:
-            break;
+    NSString *title = _dataMuArray[indexPath.row];
+    if ([title isEqualToString:@"UI部分"]) {
+        [self gotoCYUIController];
+    }else if ([title isEqualToString:@"UITableview 刷新方法"])
+    {
+        [self gotoCYTableController];
+    }else if ([title isEqualToString:@"MBProgressHUD+ECAdd"])
+    {
+        [self gotoProgressController];
+    }else if ([title isEqualToString:@"录制视频"])
+    {
+        [self gotoRecordVideoController];
+    }else if ([title isEqualToString:@"离屏渲染"])
+    {
+        [self gotoRenderingController];
     }
 }
 
@@ -120,6 +110,12 @@
 - (void)gotoRecordVideoController
 {
     RecordVideoViewController *vc = RecordVideoViewController.new;
+    vc.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:vc animated:YES completion:nil];
+}
+- (void)gotoRenderingController
+{
+    OffscreenRenderingTableViewController *vc = OffscreenRenderingTableViewController.new;
     vc.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:vc animated:YES completion:nil];
 }

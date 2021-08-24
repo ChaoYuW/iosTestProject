@@ -31,6 +31,9 @@
 		E57495E226354DAD00A9C1AF /* ECCameraButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E57495E126354DAD00A9C1AF /* ECCameraButton.m */; };
 		E57495E82636531200A9C1AF /* ECPreviewImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E57495E72636531200A9C1AF /* ECPreviewImageView.m */; };
 		E57496012636A89700A9C1AF /* ECPreviewVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = E57496002636A89700A9C1AF /* ECPreviewVideoView.m */; };
+		E5CA607626CDFD8400C38BB1 /* OffscreenRenderingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CA607526CDFD8400C38BB1 /* OffscreenRenderingTableViewController.m */; };
+		E5CA607A26CDFDE800C38BB1 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CA607826CDFDE800C38BB1 /* TableViewCell.m */; };
+		E5CA607B26CDFDE800C38BB1 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5CA607926CDFDE800C38BB1 /* TableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +101,11 @@
 		E57495E72636531200A9C1AF /* ECPreviewImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ECPreviewImageView.m; sourceTree = "<group>"; };
 		E57495FF2636A89700A9C1AF /* ECPreviewVideoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECPreviewVideoView.h; sourceTree = "<group>"; };
 		E57496002636A89700A9C1AF /* ECPreviewVideoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ECPreviewVideoView.m; sourceTree = "<group>"; };
+		E5CA607426CDFD8400C38BB1 /* OffscreenRenderingTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OffscreenRenderingTableViewController.h; sourceTree = "<group>"; };
+		E5CA607526CDFD8400C38BB1 /* OffscreenRenderingTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OffscreenRenderingTableViewController.m; sourceTree = "<group>"; };
+		E5CA607726CDFDE800C38BB1 /* TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		E5CA607826CDFDE800C38BB1 /* TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		E5CA607926CDFDE800C38BB1 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		E8FA244D951DCDAE15F0E937 /* Pods_iosProjects_iosProjectsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosProjects_iosProjectsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F21C312F2933ABB9DB65D5AE /* Pods-iosProjects-iosProjectsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosProjects-iosProjectsUITests.debug.xcconfig"; path = "Target Support Files/Pods-iosProjects-iosProjectsUITests/Pods-iosProjects-iosProjectsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -198,6 +206,7 @@
 		61F4E9A9207326C4001B9C27 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				E5CA607326CDFCE900C38BB1 /* OffscreenRendering */,
 				E57495BB2635138B00A9C1AF /* RecordVideo */,
 				E53863B025FB3EA00060D719 /* MBProgressHUD+ECAdd */,
 				61F4E9B520736F12001B9C27 /* UITableView */,
@@ -279,6 +288,18 @@
 				E57495E126354DAD00A9C1AF /* ECCameraButton.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E5CA607326CDFCE900C38BB1 /* OffscreenRendering */ = {
+			isa = PBXGroup;
+			children = (
+				E5CA607426CDFD8400C38BB1 /* OffscreenRenderingTableViewController.h */,
+				E5CA607526CDFD8400C38BB1 /* OffscreenRenderingTableViewController.m */,
+				E5CA607726CDFDE800C38BB1 /* TableViewCell.h */,
+				E5CA607826CDFDE800C38BB1 /* TableViewCell.m */,
+				E5CA607926CDFDE800C38BB1 /* TableViewCell.xib */,
+			);
+			path = OffscreenRendering;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,6 +412,7 @@
 			files = (
 				E53863D325FB48010060D719 /* success@2x.png in Resources */,
 				E53863D525FB48010060D719 /* success.png in Resources */,
+				E5CA607B26CDFDE800C38BB1 /* TableViewCell.xib in Resources */,
 				E53863D425FB48010060D719 /* error@2x.png in Resources */,
 				61F4E984207326A8001B9C27 /* LaunchScreen.storyboard in Resources */,
 				61F4E981207326A8001B9C27 /* Assets.xcassets in Resources */,
@@ -530,10 +552,12 @@
 				E57496012636A89700A9C1AF /* ECPreviewVideoView.m in Sources */,
 				61F4E987207326A8001B9C27 /* main.m in Sources */,
 				E57495BF2635140A00A9C1AF /* RecordVideoViewController.m in Sources */,
+				E5CA607626CDFD8400C38BB1 /* OffscreenRenderingTableViewController.m in Sources */,
 				61F4E979207326A5001B9C27 /* AppDelegate.m in Sources */,
 				E57495D626353B0700A9C1AF /* ECPreviewView.m in Sources */,
 				E57495E226354DAD00A9C1AF /* ECCameraButton.m in Sources */,
 				61F4E9B02073560C001B9C27 /* CYUIController.m in Sources */,
+				E5CA607A26CDFDE800C38BB1 /* TableViewCell.m in Sources */,
 				E53863B325FB3EA00060D719 /* MBProgressHUD+ECAdd.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
